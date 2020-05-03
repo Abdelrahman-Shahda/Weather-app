@@ -4,7 +4,7 @@ document.querySelector('form').addEventListener('submit',(e)=>{
     e.preventDefault();
 
     const search=document.querySelector('input');
-    const url='http://localhost:3000/weather?address='+encodeURIComponent(search.value);
+    const url='/weather?address='+encodeURIComponent(search.value);
     const message=document.querySelector('#message-1');
     message.textContent='loading'
     fetch(url).then((response)=>{

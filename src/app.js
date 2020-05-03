@@ -11,6 +11,7 @@ const partialsDir=path.join(__dirname,'../templates/partials')
 
 //Express config
 const app=express();
+const port = process.env.PORT ||3000;
 app.use(express.static(staticFileDir));
 
 //Set handlebars engine and set views directory
@@ -79,6 +80,6 @@ app.get('*',(req ,res)=>{
         title:'Page not found'
     })
 })
-app.listen(3000,()=>{
-    console.log('Server is up on port 3000');
+app.listen(port,()=>{
+    console.log('Server is up on port '+port);
 });
